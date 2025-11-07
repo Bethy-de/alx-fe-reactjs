@@ -1,0 +1,18 @@
+// src/App.jsx
+import Header from './Header';
+import UserProfile from './UserProfile';
+import MainContent from './MainContent';
+import Footer from './Footer';
+
+function App() {
+  return (
+    <div>
+      <Header />
+      <UserProfile name="Jane Doe" age={28} bio="Loves exploring cities and sharing travel stories." />
+      <MainContent />
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
