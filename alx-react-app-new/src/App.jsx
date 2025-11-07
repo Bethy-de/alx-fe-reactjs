@@ -3,6 +3,7 @@ import Header from './Header';
 import UserProfile from './UserProfile';
 import MainContent from './MainContent';
 import Footer from './Footer';
+import Counter from './components/Counter';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <UserProfile name="Jane Doe" age={28} bio="Loves exploring cities and sharing travel stories." />
       <MainContent />
+      <Counter />
       <Footer />
     </div>
   );
