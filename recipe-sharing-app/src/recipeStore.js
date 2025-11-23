@@ -2,7 +2,7 @@ import { create } from 'zustand';
 
 export const useRecipeStore = create((set) => ({
   recipes: [],
-  searchTerm: '',
+  searchTerm: '', // ✅ Required for search
   filteredRecipes: [],
   setSearchTerm: (term) =>
     set((state) => {
