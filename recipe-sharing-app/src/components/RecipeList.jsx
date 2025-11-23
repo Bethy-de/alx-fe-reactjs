@@ -1,10 +1,18 @@
 import { useRecipeStore } from '../recipeStore';
 import { Link } from 'react-router-dom';
 
+import { useRecipeStore } from './recipeStore';
 
 
 const RecipeList = () => {
   const filteredRecipes = useRecipeStore((state) => state.filteredRecipes);
+
+const FavoriteButton = ({ recipeId }) => {
+  const addFavorite = useRecipeStore((state) => state.addFavorite);
+  const removeFavorite = useRecipeStore((state) => state.removeFavorite);
+  const favorites = useRecipeStore((state) => state.favorites);
+
+  const isFavorite = favorites.includes(recipeId);
 
 
 
@@ -31,6 +39,10 @@ const RecipeList = () => {
         >
           <h3>{recipe.title}</h3>
           <p>{recipe.description}</p>
+          <button onClick={() => (isFavorite ? removeFavorite(recipeId) : addFavorite(recipeId))}>
+      {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+    </button>
+
         </div>
       ))}
     </div>
@@ -38,3 +50,5 @@ const RecipeList = () => {
 };
 
 export default RecipeList;
+      export default FavoriteButton;
+
