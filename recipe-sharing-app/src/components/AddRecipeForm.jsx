@@ -22,5 +22,6 @@ const EditRecipeForm = ({ recipe }) => {
     </form>
   );
 };
+export default EditRecipeForm;
 
 export default EditRecipeForm;
