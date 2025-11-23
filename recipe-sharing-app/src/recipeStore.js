@@ -2,8 +2,9 @@ import { create } from 'zustand';
 
 export const useRecipeStore = create((set) => ({
   recipes: [],
-  searchTerm: '', // ✅ Required for search
+  searchTerm: '', // ✅ Required
   filteredRecipes: [],
+
   setSearchTerm: (term) =>
     set((state) => {
       const filtered = state.recipes.filter((recipe) =>
@@ -11,6 +12,7 @@ export const useRecipeStore = create((set) => ({
       );
       return { searchTerm: term, filteredRecipes: filtered };
     }),
+
   addRecipe: (newRecipe) =>
     set((state) => {
       const updatedRecipes = [...state.recipes, newRecipe];
@@ -19,6 +21,7 @@ export const useRecipeStore = create((set) => ({
       );
       return { recipes: updatedRecipes, filteredRecipes: filtered };
     }),
+
   deleteRecipe: (id) =>
     set((state) => {
       const updatedRecipes = state.recipes.filter((r) => r.id !== id);
@@ -27,6 +30,7 @@ export const useRecipeStore = create((set) => ({
       );
       return { recipes: updatedRecipes, filteredRecipes: filtered };
     }),
+
   updateRecipe: (updatedRecipe) =>
     set((state) => {
       const updatedRecipes = state.recipes.map((r) =>
