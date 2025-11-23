@@ -1,3 +1,5 @@
+import SearchBar from './components/SearchBar';
+
 import { Routes, Route } from 'react-router-dom';
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
