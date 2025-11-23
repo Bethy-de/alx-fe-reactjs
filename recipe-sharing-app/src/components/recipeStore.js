@@ -14,4 +14,5 @@ export const useRecipeStore = create((set) => ({
         recipe.id === updatedRecipe.id ? updatedRecipe : recipe
       ),
     })),
+  setRecipes: (recipes) => set({ recipes }), // ✅ This is the missing function
 }));
